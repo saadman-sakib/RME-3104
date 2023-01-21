@@ -1,4 +1,4 @@
-def bisect(function, lower, upper):
+def false_position(function, lower, upper):
     l, r, f = lower, upper, function
     m = 0
     while abs(f(l)-0) > .00000000000000000001:
@@ -9,10 +9,10 @@ def bisect(function, lower, upper):
         else:
             l = m
     return l
-    
+
 
 def f(x):
     return x**2-4
 
 
-print(bisect(f, 0, 5))
+print(false_position(f, 0, 5))
