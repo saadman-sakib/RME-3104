@@ -7,7 +7,7 @@ def false_position(function, lower, upper):
     while abs(f(l)-0) > THRESHOLD:
         w1, w2 = abs(1/f(l)), abs(1/f(r))
         m = (w1*l + w2*r)/(w1 + w2)
-        if f(m) > 0 :
+        if f(m)*f(r) > 0 :
             r = m
         else:
             l = m
