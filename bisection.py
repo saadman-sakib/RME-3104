@@ -5,7 +5,7 @@ def bisect(function, lower, upper):
     m = 0
     while abs(f(l)-0) > THRESHOLD:
         m = (l+r)/2
-        if f(m) > 0 :
+        if f(m)*f(r) > 0 :
             r = m
         else:
             l = m
