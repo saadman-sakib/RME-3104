@@ -5,11 +5,13 @@ def d_dx(function, x):
     f = function
     return (f(x+h)-f(x))/h
 
-def newton_raphson(function, x_0=0):
+def newton_raphson(function, x_0=10):
     f = function
     x = x_0
     h = 0.00001
-    while abs(f(x)-0) > THRESHOLD:
+    x_prev = 0
+    while abs(f(x)-f(x_prev)) > THRESHOLD:
+        x_prev = x
         x = x - f(x)/(d_dx(f, x) + h)
     return x
 

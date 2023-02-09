@@ -2,8 +2,10 @@ THRESHOLD = .00000000000000001
 
 def bisect(function, lower, upper):
     l, r, f = lower, upper, function
-    m = 0
-    while abs(f(l)-0) > THRESHOLD:
+    m = l
+    m_prev = r
+    while abs(f(m)-f(m_prev)) > THRESHOLD:
+        m_prev = m
         m = (l+r)/2
         if f(m) > 0 :
             r = m
